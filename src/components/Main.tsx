@@ -3,22 +3,26 @@ import {
   IconButton,
   Container,
   Flex,
+  Box,
+  Text,
   Heading,
   Divider,
   Spacer,
-  useDisclosure,
   useColorMode,
-  UseDisclosureProps
 } from '@chakra-ui/react';
 import {
   AddIcon,
   SunIcon,
-  MoonIcon
+  MoonIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon
 } from '@chakra-ui/icons';
 import Card from './Card';
 import Appointments from './Appointments';
 
 const Main = () => {
+
+  const date = new Date();
 
   const {
     colorMode,
@@ -31,13 +35,13 @@ const Main = () => {
   const appointmentsData = [{
     id: '1',
     name: 'alex',
-    start_time: '7:00 AM',
-    end_time: '7:30 AM'
+    start_time: '7:00 am',
+    end_time: '7:30 am'
   }, {
     id: '2',
     name: 'erik',
-    start_time: '8:00 AM',
-    end_time: '8:30 AM'
+    start_time: '8:00 am',
+    end_time: '8:30 am'
   }];
 
   return (
@@ -53,6 +57,21 @@ const Main = () => {
           />
         </Flex>
         <Divider mb={ 4 } />
+        <Flex align={ 'center' } justify={ 'center' } mb={4}>
+          <IconButton
+            aria-label={ 'decrease-date-by-day' }
+            icon={ <ChevronLeftIcon /> }
+          />
+          <Box flexGrow={1}>
+            <Text align={ 'center' } fontWeight={ 'bold' }>
+              { date.toLocaleDateString() }
+            </Text>
+          </Box>
+          <IconButton
+            aria-label={ 'increase-date-by-day' }
+            icon={ <ChevronRightIcon /> }
+          />
+        </Flex>
         <Button
           isFullWidth
           colorScheme={ 'green' }
@@ -61,9 +80,7 @@ const Main = () => {
         >
           { 'add appt' }
         </Button>
-        <Appointments
-          data={ appointmentsData }
-        />
+        <Appointments data={ appointmentsData } />
       </Card>
     </Container>
   );
