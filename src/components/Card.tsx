@@ -10,10 +10,10 @@ const Card = ({ children, mb } : CardProps ) => {
   return (
     <Box
       bg={ useColorModeValue('white', 'gray.800') }
-      borderRadius={'lg'}
-      borderWidth={1}
-      p={4}
-      mb={mb}
+      borderRadius={ 'lg' }
+      borderWidth={ 1 }
+      p={ 4 }
+      mb={ mb }
     >
       { children }
     </Box>

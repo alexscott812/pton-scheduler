@@ -28,14 +28,14 @@ const Appointments = ({ data }: AppointmentsProps ) => {
             <Text fontWeight={ 'semibold' }>{ appt.name }</Text>
             <Text>{ `${ appt.start_time } - ${ appt.end_time }` }</Text>
             <IconButton
-              aria-label='edit-appt'
-              size='sm'
+              aria-label={ 'edit-appt' }
+              size={ 'sm' }
               icon={ <EditIcon /> }
             />
             <IconButton
-              aria-label='delete-appt'
-              size='sm'
-              colorScheme='red'
+              aria-label={ 'delete-appt' }
+              size={ 'sm' }
+              colorScheme={ 'red' }
               icon={ <DeleteIcon /> }
             />
           </Card>

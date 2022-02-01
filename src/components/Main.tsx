@@ -41,29 +41,29 @@ const Main = () => {
   }];
 
   return (
-    <Container maxW={ 'container.sm' } py={4}>
+    <Container maxW={ 'container.sm' } py={ 4 }>
       <Card>
-        <Flex align='center' justify='center' mb={4}>
+        <Flex align={ 'center' } justify={ 'center' } mb={ 4 }>
           <Heading>{ 'pton-scheduler' }</Heading>
           <Spacer />
           <IconButton
-            aria-label='toggle-color-mode'
+            aria-label={ 'toggle-color-mode' }
             onClick={ toggleColorMode }
             icon={ colorMode === 'light' ? <MoonIcon /> : <SunIcon /> }
           />
-          </Flex>
-          <Divider mb={4} />
-          <Button
-            isFullWidth
-            colorScheme={ 'green' }
-            leftIcon={ <AddIcon /> }
-            mb={4}
-          >
-            { 'add appt' }
-          </Button>
-          <Appointments
-            data={ appointmentsData }
-          />
+        </Flex>
+        <Divider mb={ 4 } />
+        <Button
+          isFullWidth
+          colorScheme={ 'green' }
+          leftIcon={ <AddIcon /> }
+          mb={ 4 }
+        >
+          { 'add appt' }
+        </Button>
+        <Appointments
+          data={ appointmentsData }
+        />
       </Card>
     </Container>
   );
