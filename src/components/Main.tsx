@@ -57,7 +57,7 @@ const Main = () => {
           />
         </Flex>
         <Divider mb={ 4 } />
-        <Flex align={ 'center' } justify={ 'center' } mb={4}>
+        <Flex align={ 'center' } justify={ 'center' } mb={ 4 }>
           <IconButton
             aria-label={ 'decrease-date-by-day' }
             icon={ <ChevronLeftIcon /> }
