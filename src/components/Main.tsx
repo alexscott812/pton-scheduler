@@ -9,6 +9,8 @@ import {
   Divider,
   Spacer,
   useColorMode,
+  useDisclosure,
+  UseDisclosureProps
 } from '@chakra-ui/react';
 import {
   AddIcon,
@@ -19,18 +21,39 @@ import {
 } from '@chakra-ui/icons';
 import Card from './Card';
 import Appointments from './Appointments';
+import CreateAppointmentModal from './CreateAppointmentModal';
+import UpdateAppointmentModal from './UpdateAppointmentModal';
+import DeleteAppointmentModal from './DeleteAppointmentModal';
 
 const Main = () => {
 
   const date = new Date();
 
+  type UseColorModeProps = {
+    colorMode: 'light' | 'dark',
+    toggleColorMode: () => void
+  };
+
   const {
     colorMode,
     toggleColorMode
-  }: {
-    colorMode: 'light' | 'dark',
-    toggleColorMode: () => void
-  } = useColorMode();
+  }: UseColorModeProps = useColorMode();
+
+  const {
+    isOpen: isCreateAppointmentModalOpen,
+    onOpen: onCreateAppointmentModalOpen,
+    onClose: onCreateAppointmentModalClose
+  }: UseDisclosureProps = useDisclosure();
+  const {
+    isOpen: isUpdateAppointmentModalOpen,
+    onOpen: onUpdateAppointmentModalOpen,
+    onClose: onUpdateAppointmentModalClose
+  }: UseDisclosureProps = useDisclosure();
+  const {
+    isOpen: isDeleteAppointmentModalOpen,
+    onOpen: onDeleteAppointmentModalOpen,
+    onClose: onDeleteAppointmentModalClose
+  }: UseDisclosureProps = useDisclosure();
 
   const appointmentsData = [{
     id: '1',
@@ -45,44 +68,63 @@ const Main = () => {
   }];
 
   return (
-    <Container maxW={ 'container.sm' } py={ 4 }>
-      <Card>
-        <Flex align={ 'center' } justify={ 'center' } mb={ 4 }>
-          <Heading>{ 'pton-scheduler' }</Heading>
-          <Spacer />
-          <IconButton
-            aria-label={ 'toggle-color-mode' }
-            onClick={ toggleColorMode }
-            icon={ colorMode === 'light' ? <MoonIcon /> : <SunIcon /> }
+    <>
+      <Container maxW={ 'container.sm' } py={ 4 }>
+        <Card>
+          <Flex align={ 'center' } justify={ 'center' } mb={ 4 }>
+            <Heading>{ 'pton-scheduler' }</Heading>
+            <Spacer />
+            <IconButton
+              aria-label={ 'toggle-color-mode' }
+              onClick={ toggleColorMode }
+              icon={ colorMode === 'light' ? <MoonIcon /> : <SunIcon /> }
+            />
+          </Flex>
+          <Divider mb={ 4 } />
+          <Flex align={ 'center' } justify={ 'center' } mb={ 4 }>
+            <IconButton
+              aria-label={ 'decrease-date-by-day' }
+              icon={ <ChevronLeftIcon /> }
+            />
+            <Box flexGrow={ 1 }>
+              <Text align={ 'center' } fontWeight={ 'bold' }>
+                { date.toLocaleDateString() }
+              </Text>
+            </Box>
+            <IconButton
+              aria-label={ 'increase-date-by-day' }
+              icon={ <ChevronRightIcon /> }
+            />
+          </Flex>
+          <Button
+            isFullWidth
+            colorScheme={ 'green' }
+            leftIcon={ <AddIcon /> }
+            onClick={ onCreateAppointmentModalOpen }
+            mb={ 4 }
+          >
+            { 'add appt' }
+          </Button>
+          <Appointments
+            data={ appointmentsData } 
+            onUpdateButtonClick={ onUpdateAppointmentModalOpen }
+            onDeleteButtonClick={ onDeleteAppointmentModalOpen }
           />
-        </Flex>
-        <Divider mb={ 4 } />
-        <Flex align={ 'center' } justify={ 'center' } mb={ 4 }>
-          <IconButton
-            aria-label={ 'decrease-date-by-day' }
-            icon={ <ChevronLeftIcon /> }
-          />
-          <Box flexGrow={1}>
-            <Text align={ 'center' } fontWeight={ 'bold' }>
-              { date.toLocaleDateString() }
-            </Text>
-          </Box>
-          <IconButton
-            aria-label={ 'increase-date-by-day' }
-            icon={ <ChevronRightIcon /> }
-          />
-        </Flex>
-        <Button
-          isFullWidth
-          colorScheme={ 'green' }
-          leftIcon={ <AddIcon /> }
-          mb={ 4 }
-        >
-          { 'add appt' }
-        </Button>
-        <Appointments data={ appointmentsData } />
-      </Card>
-    </Container>
+        </Card>
+      </Container>
+      <CreateAppointmentModal 
+        isOpen={ isCreateAppointmentModalOpen }
+        onClose={ onCreateAppointmentModalClose }
+      />
+      <UpdateAppointmentModal 
+        isOpen={ isUpdateAppointmentModalOpen }
+        onClose={ onUpdateAppointmentModalClose }
+      />
+      <DeleteAppointmentModal 
+        isOpen={ isDeleteAppointmentModalOpen }
+        onClose={ onDeleteAppointmentModalClose }
+      />
+    </>
   );
 };
 

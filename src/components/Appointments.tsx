@@ -13,10 +13,16 @@ type Appointment = {
 };
 
 type AppointmentsProps = {
-  data: Appointment[]
+  data: Appointment[],
+  onUpdateButtonClick: () => void,
+  onDeleteButtonClick: () => void
 };
 
-const Appointments = ({ data }: AppointmentsProps ) => {
+const Appointments = ({
+  data,
+  onUpdateButtonClick,
+  onDeleteButtonClick
+}: AppointmentsProps ) => {
   return (
     <>
       {
@@ -31,12 +37,14 @@ const Appointments = ({ data }: AppointmentsProps ) => {
               aria-label={ 'edit-appt' }
               size={ 'sm' }
               icon={ <EditIcon /> }
+              onClick={ onUpdateButtonClick }
             />
             <IconButton
               aria-label={ 'delete-appt' }
               size={ 'sm' }
               colorScheme={ 'red' }
               icon={ <DeleteIcon /> }
+              onClick={ onDeleteButtonClick }
             />
           </Card>
         ))
