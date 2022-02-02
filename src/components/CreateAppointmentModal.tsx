@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   Button,
   Modal,
@@ -23,7 +24,10 @@ type CreateAppointmentModalProps = {
   onClose: () => void
 };
 
-const CreateAppointmentModal = ({ isOpen, onClose }: CreateAppointmentModalProps ) => {
+const CreateAppointmentModal: React.FC<CreateAppointmentModalProps> = ({
+  isOpen,
+  onClose
+}: CreateAppointmentModalProps ) => {
   return (
     <Modal isOpen={ isOpen } onClose={ onClose }>
       <ModalOverlay />

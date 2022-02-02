@@ -6,7 +6,7 @@ type CardProps = {
   mb?: number
 };
 
-const Card = ({
+const Card: React.FC<CardProps> = ({
   children,
   mb
 }: CardProps ) => {

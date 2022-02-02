@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   Button,
   Modal,
@@ -15,7 +16,10 @@ type DeleteAppointmentModalProps = {
   onClose: () => void
 };
 
-const DeleteAppointmentModal = ({ isOpen, onClose }: DeleteAppointmentModalProps ) => {
+const DeleteAppointmentModal: React.FC<DeleteAppointmentModalProps> = ({
+  isOpen,
+  onClose
+}: DeleteAppointmentModalProps ) => {
   return (
     <Modal isOpen={ isOpen } onClose={ onClose }>
       <ModalOverlay />

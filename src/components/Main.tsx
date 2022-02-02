@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   Button,
   IconButton,
@@ -25,7 +26,7 @@ import CreateAppointmentModal from './CreateAppointmentModal';
 import UpdateAppointmentModal from './UpdateAppointmentModal';
 import DeleteAppointmentModal from './DeleteAppointmentModal';
 
-const Main = () => {
+const Main: React.FC = () => {
 
   const date = new Date();
 
