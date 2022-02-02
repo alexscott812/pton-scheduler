@@ -3,7 +3,7 @@ import { ChakraProvider } from '@chakra-ui/react';
 import theme from './theme';
 import Main from './components/Main';
 
-const App: React.FC = () => {
+const App = () => {
   return (
     <ChakraProvider theme={ theme }>
       <Main />
