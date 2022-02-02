@@ -26,28 +26,30 @@ const Appointments = ({
   return (
     <>
       {
-        data.map((appt, i, arr) => (
-          <Card  
-            key={ appt.id }
-            mb={ (i !== arr.length - 1) ? 4 : 0 } 
-          >
-            <Text fontWeight={ 'semibold' }>{ appt.name }</Text>
-            <Text>{ `${ appt.start_time } - ${ appt.end_time }` }</Text>
-            <IconButton
-              aria-label={ 'edit-appt' }
-              size={ 'sm' }
-              icon={ <EditIcon /> }
-              onClick={ onUpdateButtonClick }
-            />
-            <IconButton
-              aria-label={ 'delete-appt' }
-              size={ 'sm' }
-              colorScheme={ 'red' }
-              icon={ <DeleteIcon /> }
-              onClick={ onDeleteButtonClick }
-            />
-          </Card>
-        ))
+        data?.length
+          ? data.map((appt, i, arr) => (
+              <Card  
+                key={ appt.id }
+                mb={ (i !== arr.length - 1) ? 4 : 0 } 
+              >
+                <Text fontWeight={ 'semibold' }>{ appt.name }</Text>
+                <Text>{ `${ appt.start_time } - ${ appt.end_time }` }</Text>
+                <IconButton
+                  aria-label={ 'edit-appt' }
+                  size={ 'sm' }
+                  icon={ <EditIcon /> }
+                  onClick={ onUpdateButtonClick }
+                />
+                <IconButton
+                  aria-label={ 'delete-appt' }
+                  size={ 'sm' }
+                  colorScheme={ 'red' }
+                  icon={ <DeleteIcon /> }
+                  onClick={ onDeleteButtonClick }
+                />
+              </Card>
+            ))
+          : <Text>{ 'there are no appointments yet.' }</Text>
       }
     </>
   );

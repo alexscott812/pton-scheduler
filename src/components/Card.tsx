@@ -6,7 +6,10 @@ type CardProps = {
   mb?: number
 };
 
-const Card = ({ children, mb } : CardProps ) => {
+const Card = ({
+  children,
+  mb
+}: CardProps ) => {
   return (
     <Box
       bg={ useColorModeValue('white', 'gray.800') }

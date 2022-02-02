@@ -55,7 +55,14 @@ const Main = () => {
     onClose: onDeleteAppointmentModalClose
   }: UseDisclosureProps = useDisclosure();
 
-  const appointmentsData = [{
+  type Appointment = {
+    id: string,
+    name: string,
+    start_time: string,
+    end_time: string
+  };
+
+  const appointmentsData: Appointment[] = [{
     id: '1',
     name: 'alex',
     start_time: '7:00 am',
