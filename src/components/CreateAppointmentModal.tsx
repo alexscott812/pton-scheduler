@@ -20,11 +20,11 @@ import {
 } from '@chakra-ui/react';
 
 type CreateAppointmentModalProps = {
-  isOpen: boolean,
-  onClose: () => void
+  isOpen: boolean;
+  onClose: () => void;
 };
 
-const CreateAppointmentModal: React.FC<CreateAppointmentModalProps> = ({
+const CreateAppointmentModal = ({
   isOpen,
   onClose
 }: CreateAppointmentModalProps ) => {

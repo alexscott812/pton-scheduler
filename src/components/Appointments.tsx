@@ -7,19 +7,19 @@ import { EditIcon, DeleteIcon } from '@chakra-ui/icons';
 import Card from './Card';
 
 type Appointment = {
-  id: string,
-  name: string,
-  start_time: string,
-  end_time: string
+  id: string;
+  name: string;
+  start_time: string;
+  end_time: string;
 };
 
 type AppointmentsProps = {
-  data: Appointment[],
-  onUpdateButtonClick: () => void,
-  onDeleteButtonClick: () => void
+  data: Appointment[];
+  onUpdateButtonClick: () => void;
+  onDeleteButtonClick: () => void;
 };
 
-const Appointments: React.FC<AppointmentsProps> = ({
+const Appointments = ({
   data,
   onUpdateButtonClick,
   onDeleteButtonClick

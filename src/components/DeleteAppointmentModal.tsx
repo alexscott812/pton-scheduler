@@ -12,11 +12,11 @@ import {
 } from '@chakra-ui/react';
 
 type DeleteAppointmentModalProps = {
-  isOpen: boolean,
-  onClose: () => void
+  isOpen: boolean;
+  onClose: () => void;
 };
 
-const DeleteAppointmentModal: React.FC<DeleteAppointmentModalProps> = ({
+const DeleteAppointmentModal = ({
   isOpen,
   onClose
 }: DeleteAppointmentModalProps ) => {

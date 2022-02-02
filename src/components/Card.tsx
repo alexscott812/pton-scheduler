@@ -2,11 +2,11 @@ import React from 'react';
 import { Box, useColorModeValue } from '@chakra-ui/react';
 
 type CardProps = {
-  children?: React.ReactNode,
-  mb?: number
+  children?: React.ReactNode;
+  mb?: number;
 };
 
-const Card: React.FC<CardProps> = ({
+const Card = ({
   children,
   mb
 }: CardProps ) => {

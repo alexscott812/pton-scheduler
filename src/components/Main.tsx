@@ -26,13 +26,13 @@ import CreateAppointmentModal from './CreateAppointmentModal';
 import UpdateAppointmentModal from './UpdateAppointmentModal';
 import DeleteAppointmentModal from './DeleteAppointmentModal';
 
-const Main: React.FC = () => {
+const Main = () => {
 
   const date = new Date();
 
   type UseColorModeProps = {
-    colorMode: 'light' | 'dark',
-    toggleColorMode: () => void
+    colorMode: 'light' | 'dark';
+    toggleColorMode: () => void;
   };
 
   const {
@@ -57,10 +57,10 @@ const Main: React.FC = () => {
   }: UseDisclosureProps = useDisclosure();
 
   type Appointment = {
-    id: string,
-    name: string,
-    start_time: string,
-    end_time: string
+    id: string;
+    name: string;
+    start_time: string;
+    end_time: string;
   };
 
   const appointmentsData: Appointment[] = [{
