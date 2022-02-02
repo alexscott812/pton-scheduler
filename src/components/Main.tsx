@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   Button,
   IconButton,
@@ -22,6 +21,7 @@ import {
 } from '@chakra-ui/icons';
 import Card from './Card';
 import Appointments from './Appointments';
+import Appointment from '../types/Appointment';
 import CreateAppointmentModal from './CreateAppointmentModal';
 import UpdateAppointmentModal from './UpdateAppointmentModal';
 import DeleteAppointmentModal from './DeleteAppointmentModal';
@@ -55,13 +55,6 @@ const Main = () => {
     onOpen: onDeleteAppointmentModalOpen,
     onClose: onDeleteAppointmentModalClose
   }: UseDisclosureProps = useDisclosure();
-
-  type Appointment = {
-    id: string;
-    name: string;
-    start_time: string;
-    end_time: string;
-  };
 
   const appointmentsData: Appointment[] = [{
     id: '1',

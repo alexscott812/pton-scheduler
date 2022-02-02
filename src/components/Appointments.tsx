@@ -1,17 +1,11 @@
-import React from 'react';
 import {
   Text,
   IconButton
 } from '@chakra-ui/react';
 import { EditIcon, DeleteIcon } from '@chakra-ui/icons';
 import Card from './Card';
+import Appointment from '../types/Appointment';
 
-type Appointment = {
-  id: string;
-  name: string;
-  start_time: string;
-  end_time: string;
-};
 
 type AppointmentsProps = {
   data: Appointment[];
