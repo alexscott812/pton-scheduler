@@ -9,15 +9,18 @@ import {
   ModalCloseButton,
   Text
 } from '@chakra-ui/react';
+import Appointment from '../types/Appointment'
 
 type DeleteAppointmentModalProps = {
   isOpen: boolean;
   onClose: () => void;
+  appointmentToDelete: Appointment | null;
 };
 
 const DeleteAppointmentModal = ({
   isOpen,
-  onClose
+  onClose,
+  appointmentToDelete
 }: DeleteAppointmentModalProps ) => {
   return (
     <Modal isOpen={ isOpen } onClose={ onClose }>

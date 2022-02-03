@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   Button,
   IconButton,
@@ -68,6 +69,10 @@ const Main = () => {
     end_time: '8:30 am'
   }];
 
+  const [appointmentToCreate, setAppointmentToCreate] = useState<Appointment | null>(null);
+  const [appointmentToUpdate, setAppointmentToUpdate] = useState<Appointment | null>(null);
+  const [appointmentToDelete, setAppointmentToDelete] = useState<Appointment | null>(null);
+
   return (
     <>
       <Container maxW={ 'container.sm' } py={ 4 }>
@@ -116,14 +121,17 @@ const Main = () => {
       <CreateAppointmentModal 
         isOpen={ isCreateAppointmentModalOpen }
         onClose={ onCreateAppointmentModalClose }
+        appointmentToCreate={ appointmentToCreate }
       />
       <UpdateAppointmentModal 
         isOpen={ isUpdateAppointmentModalOpen }
         onClose={ onUpdateAppointmentModalClose }
+        appointmentToUpdate={ appointmentToUpdate }
       />
       <DeleteAppointmentModal 
         isOpen={ isDeleteAppointmentModalOpen }
         onClose={ onDeleteAppointmentModalClose }
+        appointmentToDelete={ appointmentToDelete }
       />
     </>
   );

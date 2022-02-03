@@ -17,15 +17,18 @@ import {
   SliderFilledTrack,
   SliderThumb
 } from '@chakra-ui/react';
+import Appointment from '../types/Appointment';
 
 type UpdateAppointmentModalProps = {
   isOpen: boolean;
   onClose: () => void;
+  appointmentToUpdate: Appointment | null;
 };
 
 const UpdateAppointmentModal = ({
   isOpen,
-  onClose
+  onClose,
+  appointmentToUpdate
 }: UpdateAppointmentModalProps ) => {
   return (
     <Modal isOpen={ isOpen } onClose={ onClose }>

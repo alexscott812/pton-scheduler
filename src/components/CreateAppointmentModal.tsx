@@ -17,15 +17,18 @@ import {
   SliderMark,
   Box
 } from '@chakra-ui/react';
+import Appointment from '../types/Appointment';
 
 type CreateAppointmentModalProps = {
   isOpen: boolean;
   onClose: () => void;
+  appointmentToCreate: Appointment | null
 };
 
 const CreateAppointmentModal = ({
   isOpen,
-  onClose
+  onClose,
+  appointmentToCreate
 }: CreateAppointmentModalProps ) => {
   return (
     <Modal isOpen={ isOpen } onClose={ onClose }>
