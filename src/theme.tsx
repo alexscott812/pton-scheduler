@@ -7,8 +7,6 @@ const theme = extendTheme({
       body: {
         bg: mode('gray.50', 'gray.900')(props),
         textTransform: 'lowercase'
-        // bg: mode('gray.50', 'blackAlpha.900')(props)
-        // bg: mode('gray.50', 'darkTheme.base')(props)
       }
     }),
   },
@@ -30,12 +28,10 @@ const theme = extendTheme({
     Text: {
       variants: {
         secondary: (props: any) => ({
-          // color: mode('gray.600', 'gray.400')(props),
           color: mode('gray.600', 'whiteAlpha.700')(props),
           fontWeight: 'normal'
         }),
         tertiary: (props: any) => ({
-          // color: mode('gray.600', 'gray.400')(props),
           color: mode('gray.600', 'whiteAlpha.700')(props),
           fontWeight: 'light',
           fontSize: 'xs'
@@ -62,21 +58,7 @@ const theme = extendTheme({
       defaultProps: {
         variant: 'filled'
       }
-    },
-    // Skeleton: {
-    //   defaultProps: {
-    //     // startColor: mode("gray.100", "red.100")(props),
-    //     // endColor: mode("gray.400", "red.400")(props)
-    //     startColor: 'gray.100',
-    //     endColor: 'gray.400'
-    //   }
-    // }
-    // Divider: {
-    //   baseStyle: {
-    //     opacity: '0.25',
-    //     borderWidth: '0'
-    //   }
-    // }
+    }
   }
 });
 
