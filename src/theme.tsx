@@ -5,7 +5,8 @@ const theme = extendTheme({
   styles: {
     global: (props: any) => ({
       body: {
-        bg: mode('gray.50', 'gray.900')(props)
+        bg: mode('gray.50', 'gray.900')(props),
+        textTransform: 'lowercase'
         // bg: mode('gray.50', 'blackAlpha.900')(props)
         // bg: mode('gray.50', 'darkTheme.base')(props)
       }
