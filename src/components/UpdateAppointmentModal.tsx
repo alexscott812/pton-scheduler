@@ -19,7 +19,7 @@ import {
 } from '@chakra-ui/react';
 import Appointment from '../types/Appointment';
 
-type UpdateAppointmentModalProps = {
+interface UpdateAppointmentModalProps {
   isOpen: boolean;
   onClose: () => void;
   appointmentToUpdate: Appointment | null;

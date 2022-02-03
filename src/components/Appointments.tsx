@@ -2,12 +2,14 @@ import {
   Text,
   IconButton
 } from '@chakra-ui/react';
-import { EditIcon, DeleteIcon } from '@chakra-ui/icons';
+import {
+  EditIcon,
+  DeleteIcon
+} from '@chakra-ui/icons';
 import Card from './Card';
 import Appointment from '../types/Appointment';
 
-
-type AppointmentsProps = {
+interface AppointmentsProps {
   data: Appointment[];
   onUpdateButtonClick: () => void;
   onDeleteButtonClick: () => void;

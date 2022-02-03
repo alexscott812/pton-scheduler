@@ -1,4 +1,4 @@
-type Appointment = {
+interface Appointment {
   id: string;
   name: string;
   start_time: string;

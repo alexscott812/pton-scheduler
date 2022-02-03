@@ -11,7 +11,7 @@ import {
 } from '@chakra-ui/react';
 import Appointment from '../types/Appointment'
 
-type DeleteAppointmentModalProps = {
+interface DeleteAppointmentModalProps {
   isOpen: boolean;
   onClose: () => void;
   appointmentToDelete: Appointment | null;
