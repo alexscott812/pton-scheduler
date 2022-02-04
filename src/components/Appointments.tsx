@@ -1,6 +1,13 @@
 import {
   Text,
-  IconButton
+  IconButton,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
+  Flex,
+  Box,
+  Spacer
 } from '@chakra-ui/react';
 import {
   EditIcon,
@@ -31,21 +38,36 @@ const Appointments = ({
                     key={ appt.id }
                     mb={ (i !== arr.length - 1) ? 4 : 0 } 
                   >
-                    <Text fontWeight={ 'semibold' }>{ appt.name }</Text>
-                    <Text>{ `${ appt.start_time } - ${ appt.end_time }` }</Text>
-                    <IconButton
-                      aria-label={ 'edit-appt' }
-                      size={ 'sm' }
-                      icon={ <EditIcon /> }
-                      onClick={ onUpdateButtonClick }
-                    />
-                    <IconButton
-                      aria-label={ 'delete-appt' }
-                      size={ 'sm' }
-                      colorScheme={ 'red' }
-                      icon={ <DeleteIcon /> }
-                      onClick={ onDeleteButtonClick }
-                    />
+                    <Flex align={'start'}>
+                      <Box>
+                        <Text fontWeight={ 'semibold' }>{ appt.name }</Text>
+                        <Text>{ `${ appt.start_time } - ${ appt.end_time }` }</Text>
+                      </Box>
+                      <Spacer />
+                      <Menu>
+                        <MenuButton
+                          as={ IconButton }
+                          variant={ 'ghost' }
+                          aria-label={ 'options' }
+                          size={ 'sm' }
+                          icon={ <strong>{ '···' }</strong> }
+                        />
+                        <MenuList>
+                          <MenuItem
+                            icon={ <EditIcon /> }
+                            onClick={ onUpdateButtonClick }
+                          >
+                            {'edit'}
+                          </MenuItem>
+                          <MenuItem
+                            icon={ <DeleteIcon /> }
+                            onClick={ onDeleteButtonClick }
+                          >
+                            {'delete'}
+                          </MenuItem>
+                        </MenuList>
+                      </Menu>
+                    </Flex>
                   </Card>
                 ))
               }

@@ -52,7 +52,7 @@ const Main = () => {
     onOpen: onUpdateAppointmentModalOpen,
     onClose: onUpdateAppointmentModalClose
   }: UseDisclosureProps = useDisclosure();
-  
+
   const {
     isOpen: isDeleteAppointmentModalOpen,
     onOpen: onDeleteAppointmentModalOpen,
