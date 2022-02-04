@@ -49,8 +49,8 @@ const Appointments = ({
                           as={ IconButton }
                           variant={ 'ghost' }
                           aria-label={ 'options' }
-                          size={ 'sm' }
-                          icon={ <strong>{ '···' }</strong> }
+                          size={ 'xs' }
+                          icon={ <Text fontWeight={ 'bold' }>{ '···' }</Text> }
                         />
                         <MenuList>
                           <MenuItem
