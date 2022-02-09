@@ -50,20 +50,20 @@ const Appointments = ({
                           variant={ 'ghost' }
                           aria-label={ 'options' }
                           size={ 'xs' }
-                          icon={ <Text fontWeight={ 'bold' }>{ '···' }</Text> }
+                          icon={ <Text fontWeight={ 'semibold' }>{ '···' }</Text> }
                         />
                         <MenuList>
                           <MenuItem
                             icon={ <EditIcon /> }
                             onClick={ onUpdateButtonClick }
                           >
-                            {'edit'}
+                            { 'edit' }
                           </MenuItem>
                           <MenuItem
                             icon={ <DeleteIcon /> }
                             onClick={ onDeleteButtonClick }
                           >
-                            {'delete'}
+                            { 'delete' }
                           </MenuItem>
                         </MenuList>
                       </Menu>

@@ -18,6 +18,7 @@ import {
   Box
 } from '@chakra-ui/react';
 import Appointment from '../types/Appointment';
+import getDailyTimes from '../utils/get-daily-times';
 
 interface CreateAppointmentModalProps {
   isOpen: boolean;
@@ -30,6 +31,9 @@ const CreateAppointmentModal = ({
   onClose,
   appointmentToCreate
 }: CreateAppointmentModalProps ) => {
+
+  const dailyTimes = getDailyTimes();
+
   return (
     <Modal isOpen={ isOpen } onClose={ onClose }>
       <ModalOverlay />
@@ -41,7 +45,11 @@ const CreateAppointmentModal = ({
           <Input variant={ 'filled' } placeholder={ 'name' } mb={ 4 } />
           <Text mb={ 2 }>{ 'start time' }</Text>
           <Select variant={ 'filled' } mb={ 4 } >
-
+            {
+              dailyTimes.map(time => (
+                <option key={ time } value={ time }>{ time }</option>
+              ))
+            }
           </Select>
           <Text mb={ 2 }>{ 'appt length' }</Text>
           <Box px={ 4 } mb={ 4 }>
