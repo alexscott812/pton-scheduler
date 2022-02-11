@@ -54,12 +54,12 @@ const CreateAppointmentModal = ({
           <Text mb={ 2 }>{ 'appt length' }</Text>
           <Box px={ 4 } mb={ 4 }>
             <Slider defaultValue={ 30 } min={ 10 } max={ 60 } step={ 5 }>
-              <SliderMark value={10} ml={ -3 } mt={ 2 } fontSize={ 'sm' }>{ '10m' }</SliderMark>
-              <SliderMark value={20} ml={ -3 } mt={ 2 } fontSize={ 'sm' }>{ '20m' }</SliderMark>
-              <SliderMark value={30} ml={ -3 } mt={ 2 } fontSize={ 'sm' }>{ '30m' }</SliderMark>
-              <SliderMark value={40} ml={ -3 } mt={ 2 } fontSize={ 'sm' }>{ '40m' }</SliderMark>
-              <SliderMark value={50} ml={ -3 } mt={ 2 } fontSize={ 'sm' }>{ '50m' }</SliderMark>
-              <SliderMark value={60} ml={ -3 } mt={ 2 } fontSize={ 'sm' }>{ '60m' }</SliderMark>
+              <SliderMark value={ 10 } ml={ -3 } mt={ 2 } fontSize={ 'sm' }>{ '10m' }</SliderMark>
+              <SliderMark value={ 20 } ml={ -3 } mt={ 2 } fontSize={ 'sm' }>{ '20m' }</SliderMark>
+              <SliderMark value={ 30 } ml={ -3 } mt={ 2 } fontSize={ 'sm' }>{ '30m' }</SliderMark>
+              <SliderMark value={ 40 } ml={ -3 } mt={ 2 } fontSize={ 'sm' }>{ '40m' }</SliderMark>
+              <SliderMark value={ 50 } ml={ -3 } mt={ 2 } fontSize={ 'sm' }>{ '50m' }</SliderMark>
+              <SliderMark value={ 60 } ml={ -3 } mt={ 2 } fontSize={ 'sm' }>{ '60m' }</SliderMark>
               <SliderTrack bg={ 'green.100' }>
                 {/* <Box position='relative' right={10} /> */}
                 <SliderFilledTrack bg={ 'green.500' } />
@@ -72,7 +72,7 @@ const CreateAppointmentModal = ({
           <Button mr={ 3 } onClick={ onClose }>
             { 'close' }
           </Button>
-          <Button colorScheme={ 'green' }>
+          <Button colorScheme={ 'green' } onClick={ onClose }>
             { 'add appt' }
           </Button>
         </ModalFooter>

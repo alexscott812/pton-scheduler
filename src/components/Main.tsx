@@ -24,7 +24,7 @@ import Card from './Card';
 import Appointments from './Appointments';
 import Appointment from '../types/Appointment';
 import CreateAppointmentModal from './CreateAppointmentModal';
-import UpdateAppointmentModal from './UpdateAppointmentModal';
+import EditAppointmentModal from './EditAppointmentModal';
 import DeleteAppointmentModal from './DeleteAppointmentModal';
 
 const Main = () => {
@@ -48,9 +48,9 @@ const Main = () => {
   }: UseDisclosureProps = useDisclosure();
 
   const {
-    isOpen: isUpdateAppointmentModalOpen,
-    onOpen: onUpdateAppointmentModalOpen,
-    onClose: onUpdateAppointmentModalClose
+    isOpen: isEditAppointmentModalOpen,
+    onOpen: onEditAppointmentModalOpen,
+    onClose: onEditAppointmentModalClose
   }: UseDisclosureProps = useDisclosure();
 
   const {
@@ -72,7 +72,7 @@ const Main = () => {
   }];
 
   const [appointmentToCreate, setAppointmentToCreate] = useState<Appointment | null>(null);
-  const [appointmentToUpdate, setAppointmentToUpdate] = useState<Appointment | null>(null);
+  const [appointmentToEdit, setAppointmentToEdit] = useState<Appointment | null>(null);
   const [appointmentToDelete, setAppointmentToDelete] = useState<Appointment | null>(null);
 
   return (
@@ -115,7 +115,7 @@ const Main = () => {
           </Button>
           <Appointments
             data={ appointmentsData } 
-            onUpdateButtonClick={ onUpdateAppointmentModalOpen }
+            onEditButtonClick={ onEditAppointmentModalOpen }
             onDeleteButtonClick={ onDeleteAppointmentModalOpen }
           />
         </Card>
@@ -125,10 +125,10 @@ const Main = () => {
         onClose={ onCreateAppointmentModalClose }
         appointmentToCreate={ appointmentToCreate }
       />
-      <UpdateAppointmentModal 
-        isOpen={ isUpdateAppointmentModalOpen }
-        onClose={ onUpdateAppointmentModalClose }
-        appointmentToUpdate={ appointmentToUpdate }
+      <EditAppointmentModal 
+        isOpen={ isEditAppointmentModalOpen }
+        onClose={ onEditAppointmentModalClose }
+        appointmentToEdit={ appointmentToEdit }
       />
       <DeleteAppointmentModal 
         isOpen={ isDeleteAppointmentModalOpen }

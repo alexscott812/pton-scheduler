@@ -35,7 +35,7 @@ const DeleteAppointmentModal = ({
           <Button mr={ 3 } onClick={ onClose }>
             { 'close' }
           </Button>
-          <Button colorScheme={ 'red' }>
+          <Button colorScheme={ 'red' } onClick={ onClose }>
             { 'delete appt' }
           </Button>
         </ModalFooter>

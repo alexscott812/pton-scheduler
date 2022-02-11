@@ -19,22 +19,22 @@ import {
 } from '@chakra-ui/react';
 import Appointment from '../types/Appointment';
 
-interface UpdateAppointmentModalProps {
+interface EditAppointmentModal {
   isOpen: boolean;
   onClose: () => void;
-  appointmentToUpdate: Appointment | null;
+  appointmentToEdit: Appointment | null;
 };
 
-const UpdateAppointmentModal = ({
+const EditAppointmentModal = ({
   isOpen,
   onClose,
-  appointmentToUpdate
-}: UpdateAppointmentModalProps ) => {
+  appointmentToEdit
+}: EditAppointmentModal ) => {
   return (
     <Modal isOpen={ isOpen } onClose={ onClose }>
       <ModalOverlay />
       <ModalContent>
-        <ModalHeader>{ 'update appt' }</ModalHeader>
+        <ModalHeader>{ 'edit appt' }</ModalHeader>
         <ModalCloseButton />
         <ModalBody>
         <Text mb={ 2 }>{ 'name' }</Text>
@@ -64,8 +64,8 @@ const UpdateAppointmentModal = ({
           <Button mr={ 3 } onClick={ onClose }>
             { 'close' }
           </Button>
-          <Button colorScheme={ 'green' }>
-            { 'update appt' }
+          <Button colorScheme={ 'green' } onClick={ onClose }>
+            { 'edit appt' }
           </Button>
         </ModalFooter>
       </ModalContent>
@@ -73,4 +73,4 @@ const UpdateAppointmentModal = ({
   );
 };
 
-export default UpdateAppointmentModal;
+export default EditAppointmentModal;

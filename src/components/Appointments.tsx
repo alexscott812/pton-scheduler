@@ -18,13 +18,13 @@ import Appointment from '../types/Appointment';
 
 interface AppointmentsProps {
   data: Appointment[];
-  onUpdateButtonClick: () => void;
+  onEditButtonClick: () => void;
   onDeleteButtonClick: () => void;
 };
 
 const Appointments = ({
   data,
-  onUpdateButtonClick,
+  onEditButtonClick,
   onDeleteButtonClick
 }: AppointmentsProps ) => {
   return (
@@ -38,7 +38,7 @@ const Appointments = ({
                     key={ appt.id }
                     mb={ (i !== arr.length - 1) ? 4 : 0 } 
                   >
-                    <Flex align={'start'}>
+                    <Flex align={ 'start' }>
                       <Box>
                         <Text fontWeight={ 'semibold' }>{ appt.name }</Text>
                         <Text>{ `${ appt.start_time } - ${ appt.end_time }` }</Text>
@@ -55,7 +55,7 @@ const Appointments = ({
                         <MenuList>
                           <MenuItem
                             icon={ <EditIcon /> }
-                            onClick={ onUpdateButtonClick }
+                            onClick={ onEditButtonClick }
                           >
                             { 'edit' }
                           </MenuItem>
